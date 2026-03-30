@@ -1,8 +1,19 @@
+import HeroSection from "@/components/HeroSection";
+import AboutUs from "@/components/Message";
+import InfoGrid from "@/components/InfoGrid";
+
 export default function Home() {
     return (
-        <div>
-            <h1>Home Page</h1>
-            <p>Welcome to our church community.</p>
+    <>
+
+        <HeroSection />
+
+        <div className="container">
+            
+            <AboutUs />
+            <InfoGrid />
+            
         </div>
-    )
+        </>
+    );
 }
