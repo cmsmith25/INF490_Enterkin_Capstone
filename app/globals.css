@@ -229,4 +229,114 @@ a {
     color: var(--color-cream);
 }
 
+.center-text {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+@media (max-width: 768px) {
+    .info-grid {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .info-grid .left-image,
+    .info-grid .right-image {
+        height: 200px;
+    }
+}
+
+.prayer-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+.prayer-form-h1 {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.prayer-form input,
+.prayer-form textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: var(--font-body);
+}
+
+.prayer-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.prayer-form button {
+    padding: 12px;
+    background-color: var(--color-sage);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.prayer-form button:hover {
+    background-color: var(--color-sage-dark);
+}
+
+.public-prayer-section {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.public-prayer-card {
+    background-color: var(--color-cream);
+    border: 1px solid var(--color-wood);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+/*Sermons page*/
+
+.page-content {
+    padding: 40px 20px;
+}
+
+.page-title {
+    text-align: center;
+    font-family: var(--font-heading);
+    margin-bottom: 40px;
+}
+
+/*Grid layout*/
+
+.sermon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/*individual sermons*/
+
+.semon-card {
+    background-color: var(--color-cream);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/*video*/
+
+.sermon-card iframe {
+    width: 100%;
+    height: 200px;
+    border: none;
+    border-radius: 6px;
+}
 
