@@ -209,7 +209,7 @@ a {
 .info-grid .left-image,
 .info-grid .right-image {
     background-size: cover;
-    background-position: center;
+    background-position: top;
 }
 
 
