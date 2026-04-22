@@ -3,7 +3,7 @@ export default function Message() {
         <section className="message">
 
             <div className="divider">
-                <span>Who We Are</span>
+                <span>Mission Statement</span>
             </div>
 
             <p>First Baptist Church in Norwich is a welcoming community dedicated to 

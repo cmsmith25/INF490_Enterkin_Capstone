@@ -7,7 +7,7 @@ export default function About() {
             {/*Main church photo*/}
             <div className="about-hero">
                 <img
-                    src="/images/church-building.jpg"
+                    src="/images/building1.jpg"
                     alt="Church Building"
                 />
             </div>
@@ -18,7 +18,7 @@ export default function About() {
                 <h2>Who We Are</h2>
 
                 <p>
-                    Welcome to First Baptist Church of Norwich, We are a Christ-centered community
+                    Welcome to First Baptist Church of Norwich, Kansas. We are a Christ-centered community
                     dedicated to worship, fellowship, and serving others. Our church family strives
                     to provide a welcoming environment where individuals and families can grow in 
                     faith together.

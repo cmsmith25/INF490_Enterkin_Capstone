@@ -1,6 +1,7 @@
-import HeroSection from "@/components/HeroSection";
-import AboutUs from "@/components/Message";
-import InfoGrid from "@/components/InfoGrid";
+import HeroSection from "../components/HeroSection";
+import AboutUs from "../components/Message";
+import InfoGrid from "../components/InfoGrid";
+import ScriptureCarousel from "../components/ScriptureCarousel";
 
 export default function Home() {
     return (
@@ -9,9 +10,12 @@ export default function Home() {
         <HeroSection />
 
         <div className="container">
+
+            <ScriptureCarousel />
             
             <AboutUs />
             <InfoGrid />
+            
             
         </div>
         </>
