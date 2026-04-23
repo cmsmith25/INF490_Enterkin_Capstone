@@ -1,32 +1,69 @@
-export default function Sermon() {
+import { getSermons } from "../../sanity/lib/queries";
+
+export default async function Sermon() {
+
+    const sermons = await getSermons();
+
     return (
-       <div className="page-content">
-        <h1 className="page-title">Sermon Archive</h1>
+        <div className="page-content">
+            <h1 className="page-title">Sermon Archive</h1>
 
-        <div className="sermon-grid">
-            <div className="sermon-card">
-                <iframe
-                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                    title="Sermon Video"
-                    allowFullScreen
-                ></iframe>
+            <div className="sermon-grid">
 
-                <h3>Sample Video</h3>
-                <p>March 10, 2026</p>
-            </div>
+                {sermons.map((sermon) => {
 
-            <div className="sermon-card">
-                <iframe
-                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                    title="Sermon Video"
-                    allowFullScreen
-                ></iframe>
+                    //Converts youtube URL
+                    function getYouTubeEmbedUrl(url) {
+                        if (!url) return "";
 
-                <h3>Sample Video</h3>
-                <p>March 3, 2026</p>
+                        let videoId = "";
+
+                        //Standard YouTube URL
+                        if (url.includes("watch?v=")) {
+                            videoId = url.split("watch?v=")[1].split("&") [0];
+                        }
+
+                        //Short YouTube URL
+                        if (url.includes("youtu.be/")) {
+                            videoId = url.split("watch?v=")[1].split("&")[0];
+                        }
+
+                        return `http://www.youtube.com/embed/${videoId}`;
+                    }
+
+                    const embedUrl = getYouTubeEmbedUrl(sermon.videoUrl);
+
+                    return (
+                        <div className="sermon-card" key={sermon._id}>
+
+                            <iframe
+                                src={embedUrl}
+                                title={sermon.title}
+                                allowFullScreen
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                ></iframe>
+
+                                <h3>{sermon.title}</h3>
+
+                                <p>
+                                    {new Date(sermon.date).toLocaleDateString("en-US", {
+                                        year: "numeric",
+                                        month: "long",
+                                        day: "numeric",
+                                    })}
+                                </p>
+
+                                <p className="sermon-speaker">
+                                    {sermon.speaker}
+                                </p>
+
+                                <p className="sermon-description">
+                                    {sermon.description}
+                                </p>
+                            </div>
+                    );
+                })}
             </div>
         </div>
-       </div>
-
     );
 }
