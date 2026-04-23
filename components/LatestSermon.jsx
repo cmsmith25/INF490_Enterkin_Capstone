@@ -18,9 +18,18 @@ function getYouTubeEmbedUrl(url) {
 
 export default async function LatestSermon() {
     
-    const sermon = await getLatestSermon();
+    const data = await getLatestSermon();
+    const sermon = Array.isArray(data) ? data[0] :data;
 
-    if (!sermon) return null;
+    if (!sermon || !sermon.videoUrl) {
+        return (
+            <section className="latest-sermon-section">
+                <h2 className="latest-sermon-title">Latest Sermon</h2>
+                <p>No sermons available yet.</p>
+            </section>
+
+        );
+    }
 
     const embedUrl = getYouTubeEmbedUrl(sermon.videoUrl);
 
@@ -34,7 +43,8 @@ export default async function LatestSermon() {
                     src={embedUrl}
                     title={sermon.title}
                     allowFullScreen
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"/>
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+                </iframe>
 
                     <h3>{sermon.title}</h3>
 
