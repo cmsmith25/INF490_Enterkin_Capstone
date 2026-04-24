@@ -47,7 +47,7 @@ export default async function Sermon() {
                         //sermon card
                         <div
                             className="sermon-card"
-                            key={sermon.id}
+                            key={sermon._id}
                         >
 
                             {embedUrl && (
@@ -63,9 +63,9 @@ export default async function Sermon() {
                             <h3>{sermon.title}</h3>
 
                             <p>
-                                {new Date(
-                                    sermon.Date
-                                ).toLocaleDateString(
+                                {/*guard against bad data*/}
+                                {sermon.date &&
+                                    new Date(sermon.date).toLocaleDateString(
                                     "en-US",
                                     {
                                         year: "numeric",
