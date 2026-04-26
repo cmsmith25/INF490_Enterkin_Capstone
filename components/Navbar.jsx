@@ -3,6 +3,7 @@
 import {useState} from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 
 export default function Navbar() {
@@ -16,7 +17,25 @@ export default function Navbar() {
     return (
         <nav className="navbar">
             <div className="navbar-container">
-                <div className={`logo ${isHome ? "logo-home" : ""}`}>First Baptist Church of Norwich</div>
+
+                {/*Logo section*/}
+                <Link
+                    href="/"
+                    className={`logo-container ${isHome ? "logo-home" : ""}`}>
+
+                        <Image
+                            src="/images/logo1.png"
+                            alt="First Baptist Church of Norwich Logo"
+                            width={100}
+                            height={100}
+                            className="logo-image"
+                        />
+
+                        <div className="logo-text">
+                            First Baptist Church of Norwich
+                        </div>
+
+                    </Link>
 
                 {/*Hamburger*/}
                 <div className="hamburger" onClick={() => setOpen(!open)}>
