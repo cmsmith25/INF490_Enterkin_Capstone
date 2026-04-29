@@ -29,9 +29,8 @@ export default function Prayer() {
     const fetchRequests = async () => {
         try {
             const data = await client.fetch(`
-                *[_type == "prayerRequest"] | order(_createdAt desc)`,
-                {},
-                { cache: "no-store"}
+                *[_type == "prayerRequest"] | order(_createdAt desc)`
+                
                 );
 
                 setPublicRequests(data);
@@ -52,7 +51,7 @@ export default function Prayer() {
         console.log(formData);
 
         try {
-            await fetch("/api/prayer-request", {
+            const res = await fetch("/api/prayer-request", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -64,6 +63,13 @@ export default function Prayer() {
                     isPublic: formData.showPublic,
                 }),
             });
+
+            const data = await res.json();
+            console.log("API RESPONSE:", data);
+
+            if (!data.success) {
+                throw new Error(data.error || "Submission failed");
+            }
 
             //resets form
             setFormData({
@@ -81,9 +87,10 @@ export default function Prayer() {
                 setSuccessMessage("");
          }, 3000);
 
+            //Safe refresh
             setTimeout(() => {
                 fetchRequests();
-            }, 500);
+            }, 300);
 
             
     } catch (error) {
