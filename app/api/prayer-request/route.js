@@ -1,6 +1,8 @@
 import { serverClient } from "../../../sanity/lib/server";
 
 export async function POST(req) {
+    console.log("TOKEN EXISTS:", !!process.env.SANITY_API_WRITE_TOKEN);
+    
     try {
         const body = await req.json();
 
