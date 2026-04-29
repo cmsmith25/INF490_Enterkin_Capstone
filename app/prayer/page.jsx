@@ -44,6 +44,13 @@ export default function Prayer() {
     //initial loading
     useEffect(() => {
         fetchRequests();
+
+        const interval = setInterval(() => {
+            fetchRequests();
+        }, 5000);//refresh every 5 seconds
+
+        return () => clearInterval(interval);
+        
     }, []);
         
 
