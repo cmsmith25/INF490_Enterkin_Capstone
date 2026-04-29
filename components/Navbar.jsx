@@ -39,9 +39,10 @@ export default function Navbar() {
 
                 {/*Hamburger*/}
                 <div className="hamburger" onClick={() => setOpen(!open)}>
-                    ☰
+                    ☰ 
+                    <span className="menu-label">Menu</span>
                     </div>
-                    </div>
+                </div>
                 
                 {/*Dropdown menu*/}
                 {open && (
