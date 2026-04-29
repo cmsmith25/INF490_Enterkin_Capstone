@@ -87,10 +87,9 @@ export default function Prayer() {
                 setSuccessMessage("");
          }, 3000);
 
-            //Safe refresh
-            setTimeout(() => {
-                fetchRequests();
-            }, 300);
+         setTimeout(() => {
+            window.location.reload("");
+         }, 800); //delay for user to see confirmation message
 
             
     } catch (error) {
