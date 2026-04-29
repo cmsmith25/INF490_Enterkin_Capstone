@@ -33,6 +33,8 @@ export default function Prayer() {
                 
                 );
 
+                console.log("Data FROM SANITY:", data);
+
                 setPublicRequests(data);
         } catch (error) {
             console.error("Fetch error:", error);
@@ -87,9 +89,7 @@ export default function Prayer() {
                 setSuccessMessage("");
          }, 3000);
 
-         setTimeout(() => {
-            window.location.reload("");
-         }, 800); //delay for user to see confirmation message
+         await fetchRequests();
 
             
     } catch (error) {
