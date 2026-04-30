@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { getEvents } from "../../sanity/lib/eventQueries";
 
 
@@ -39,7 +41,9 @@ export default async function Bulletin() {
     const recurringSundays = getNextSundays();
 
     //combine both sources
-    const events = [...recurringSundays, ...cmsEvents];
+    const events = [...recurringSundays, ...cmsEvents].sort(
+    (a, b) => new Date(a.date) - new Date(b.date)
+    );
     
 
     return (

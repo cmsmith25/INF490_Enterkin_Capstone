@@ -7,7 +7,7 @@ export default function About() {
             {/*Main church photo*/}
             <div className="about-hero">
                 <img
-                    src="/images/building1.jpg"
+                    src="/images/baptist1.jpg"
                     alt="Church Building"
                 />
             </div>
