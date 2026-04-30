@@ -29,11 +29,19 @@ export default function Prayer() {
     const fetchRequests = async () => {
         try {
             const data = await client.fetch(`
-                *[_type == "prayerRequest"] | order(_createdAt desc)`
+                *[_type == "prayerRequest" && isPublic == true] | order(_createdAt desc)`
                 
                 );
 
                 console.log("Data FROM SANITY:", data);
+
+                console.log(
+                    "Is public values:",
+                    data.map(item => ({
+                        name: item.name,
+                        isPublic: item.isPublic
+                    }))
+                );
 
                 setPublicRequests(data);
         } catch (error) {
