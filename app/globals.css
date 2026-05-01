@@ -537,6 +537,13 @@ a {
     text-align: left;
 }
 
+input[type="checkbox"] {
+    width: auto;
+    display: inline-block;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
 .success-message {
     background-color: #e6f7ee;
     color: #1a7f4b;
