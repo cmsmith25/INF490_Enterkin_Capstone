@@ -20,6 +20,11 @@
     padding: 0;
 }
 
+/*Mobile input */
+input, textarea {
+    width: 100%;
+}
+
 body {
     font-family: var(--font-body);
     background-color: var(--color-sage-dark);
@@ -101,7 +106,21 @@ a {
     }
 
     .logo-text {
-        font-size: 1.4rem;
+        font-size: 1.1rem;
+        line-height: 1.2;
+        max-width: 180px;
+    }
+
+    .navbar-container {
+        padding: 10px 12px;
+    }
+
+    .logo-container {
+        gap: 10px;
+    }
+
+    .menu-label {
+        display: none;
     }
 }
 
@@ -465,7 +484,9 @@ a {
     flex-direction: column;
     gap: 15px;
     max-width: 600px;
+    width: 100%;
     margin: 30px auto;
+    padding: 0 15px;
 }
 
 .prayer-form-h1 {

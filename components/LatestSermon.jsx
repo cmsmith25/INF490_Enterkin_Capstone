@@ -1,14 +1,17 @@
 import { getLatestSermon } from "../sanity/lib/queries";
 
+//converts Youtube URL into iframe URL
 function getYouTubeEmbedUrl(url) {
     if(!url) return "";
 
     let videoId= "";
 
+    //standard Youtube URLS
     if (url.includes("watch?v=")) {
         videoId = url.split("watch?v=")[1].split("&")[0];
     }
 
+    //shortened Youtube URLS
     else if (url.includes("youtu.be/")) {
         videoId = url.split("youtu.be/")[1].split("?")[0];
     }
@@ -16,11 +19,16 @@ function getYouTubeEmbedUrl(url) {
     return `https://www.youtube.com/embed/${videoId}`;
 }
 
+//fetches latest sermon from Sanity
 export default async function LatestSermon() {
     
+    //fetch latest sermon
     const data = await getLatestSermon();
+
+    //prevents array
     const sermon = Array.isArray(data) ? data[0] :data;
 
+    //no sermon or missing URL, show message
     if (!sermon || !sermon.videoUrl) {
         return (
             <section className="latest-sermon-section">
@@ -31,6 +39,7 @@ export default async function LatestSermon() {
         );
     }
 
+    //converts Youtube URL into embed
     const embedUrl = getYouTubeEmbedUrl(sermon.videoUrl);
 
     return (

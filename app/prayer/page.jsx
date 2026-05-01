@@ -4,6 +4,7 @@ import { client } from "../../sanity/lib/client";
 
 
 export default function Prayer() {
+    //store input values
     const [formData, setFormData] = useState({
         name:"",
         email: "",
@@ -11,7 +12,9 @@ export default function Prayer() {
         showPublic: false,
     });
 
+    //store prayer requests
     const [publicRequests, setPublicRequests] = useState([]);
+    //stores success message
     const [successMessage, setSuccessMessage] = useState("");
 
 
@@ -25,9 +28,10 @@ export default function Prayer() {
         }));
     };
 
-    //Fetches public prayers from Sanity
+    //gets public prayers from Sanity
     const fetchRequests = async () => {
         try {
+            //pull only requests that are public
             const data = await client.fetch(`
                 *[_type == "prayerRequest" && isPublic == true] | order(_createdAt desc)`
                 
@@ -43,6 +47,7 @@ export default function Prayer() {
                     }))
                 );
 
+                //update screen with results
                 setPublicRequests(data);
         } catch (error) {
             console.error("Fetch error:", error);
@@ -53,21 +58,23 @@ export default function Prayer() {
     useEffect(() => {
         fetchRequests();
 
+        //refresh every 5 seconds
         const interval = setInterval(() => {
             fetchRequests();
-        }, 5000);//refresh every 5 seconds
+        }, 5000);
 
         return () => clearInterval(interval);
         
     }, []);
         
 
-    //Submits
+    //Submits form
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log(formData);
 
         try {
+            //sends form data to API
             const res = await fetch("/api/prayer-request", {
                 method: "POST",
                 headers: {
@@ -81,9 +88,11 @@ export default function Prayer() {
                 }),
             });
 
+            //reads data
             const data = await res.json();
             console.log("API RESPONSE:", data);
 
+            //handles a failure
             if (!data.success) {
                 throw new Error(data.error || "Submission failed");
             }
@@ -104,6 +113,7 @@ export default function Prayer() {
                 setSuccessMessage("");
          }, 3000);
 
+         //refreshes prayer list
          await fetchRequests();
 
             
@@ -166,7 +176,7 @@ export default function Prayer() {
                 </form>
 
 
-                    {/*public requests */}
+                    {/*public  prayer requests */}
                     {publicRequests.length> 0 && (
                         <div className="public-prayer-section">
                             <h2>Community Prayer Requests</h2>

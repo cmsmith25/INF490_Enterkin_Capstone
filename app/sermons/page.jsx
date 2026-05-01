@@ -20,7 +20,9 @@ function getYouTubeEmbedUrl(url) {
     }
 
     //returns the correct format url
-    return `https://www.youtube.com/embed/${videoId}`;
+    return videoId
+        ? `https://www.youtube.com/embed/${videoId}`
+        : "";
 
 }
 
@@ -50,15 +52,19 @@ export default async function Sermon() {
                             key={sermon._id}
                         >
 
+                            {/*Video Section*/}
+
                             {embedUrl && (
                                 <iframe
                                     src={embedUrl}
                                     title={sermon.title}
                                     allowFullScreen
-                                    //allow the playback features
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 />
+                            
                             )}
+
+                            {/*text under videos*/}
 
                             <h3>{sermon.title}</h3>
 
