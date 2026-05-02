@@ -38,14 +38,14 @@ export default function About() {
                 <h2>Our History</h2>
 
                 <p>
-                    Our church has been part of the Norwich community for many years.
+                    Our church has been part of the Norwich community for many years. The the current church building 
+                    was erected in 1914, with the original church building sitting 7 miles West in Adams, KS. 
                     Through seasons of growth and change, we have remained committed to spreading
                     the message of hope and faith.
                 </p>
 
                 <p>
-                    Additional historical details about the founding of the church, significant
-                    milestones, and community involvement will be added here.
+                    
                 </p>
             </section>
 
@@ -56,8 +56,12 @@ export default function About() {
                     <h2>Meet our Pastor</h2>
 
                     <p>
-                        Our church is led by Eric Taylor. Give more information about Pastor Taylor
-                        and his wife Lori.
+                        Our church has been led by Pastor Eric Taylor since the Summer of 2008. His wife, Lorie Taylor,
+                        has had family attending the church for two generations. Their goal for the church is for it
+                        to be exactly what God intended, to be a rising tide that lifts all ships. 
+
+                        "When people visit, we want them to find the environment loving, safe, and nourishing." -The Taylors
+                        
                     </p>
                 </div>
 

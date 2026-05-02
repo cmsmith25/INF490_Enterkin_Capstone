@@ -1,5 +1,5 @@
 import HeroSection from "../components/HeroSection";
-import AboutUs from "../components/Message";
+import ThemeVerse from "../components/Message";
 import InfoGrid from "../components/InfoGrid";
 import ScriptureCarousel from "../components/ScriptureCarousel";
 import LatestSermon from "../components/LatestSermon";
@@ -10,13 +10,15 @@ export default function Home() {
 
         <HeroSection />
 
+        <ThemeVerse />
+
         <LatestSermon />
 
         <div className="container">
 
             <ScriptureCarousel />
             
-            <AboutUs />
+            
             <InfoGrid />
             
             

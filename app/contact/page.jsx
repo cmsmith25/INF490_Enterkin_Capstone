@@ -17,11 +17,11 @@ export default function Contact() {
                     </p>
 
                     <p>
-                        <strong>Phone:</strong> (000)123-4567
+                        <strong>Phone:</strong> (620)478-2258
                     </p>
 
                     <p>
-                        <strong>Email:</strong> info@firstbaptistnorwich.org
+                        <strong>Email:</strong> norwichbaptistchurch@outlook.com
                     </p>
                 </div>
 
