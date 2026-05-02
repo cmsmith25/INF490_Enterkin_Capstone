@@ -35,8 +35,8 @@ export default function ThemeVerse() {
 
             {verseData ? (
                 <>
-                    <p className="italic text-lg">"{verseData.verse}"</p>
-                    <p className="mt-2 font-semibold">{verseData.reference}</p>
+                    <p className="theme-verse-text">"{verseData.verse}"</p>
+                    <p className="verse-reference">{verseData.reference}</p>
                 </>
             ):(
                 <p>Loading...</p>
