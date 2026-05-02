@@ -1,18 +1,25 @@
 "use client";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { client } from "../sanity/lib/client";
 
 
-export default function Message() {
+
+export default function ThemeVerse() {
+    //stores the theme verse from SAnity
     const [verseData, setVerseData] = useState(null);
 
     useEffect (() => {
+        //fetch the theme verse from Sanity
         const fetchVerse = async () => {
-            const data = await client.fetch(`
-                *[_type == "themeVerse"][0]
-            `);
+            try {
+                const data = await client.fetch(`
+                    *[_type == "themeVerse"][0]
+                `); //fetch only the first document
 
-            setVerseData(data);
+                setVerseData(data);
+            } catch (error) {
+                console.error("Error fetching theme verse:", error);
+            }
         };
 
         fetchVerse();
