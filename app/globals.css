@@ -218,32 +218,10 @@ a {
 /*About section*/
 .message {
     text-align: center;
-    margin: 2rem 0;
-    padding: 60px 20px;
+    padding: 40px 20px;
     color: var(--color-wood);
     background: rgba(255, 255, 255, 0.4);
     border-radius: 12px;
-}
-
-.message h2 {
-    font-family: var(--font-heading);
-    font-size: 2.8rem;
-    margin-bottom: 20px;
-}
-
-.theme-verse-text {
-    font-family: "Great Vibes", cursive;
-    font-size: 3rem;
-    line-height: 1.8;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.verse-reference {
-    font-family: var(--font-heading);
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-top: 10px;
 }
 
 /*Divider with lines*/
@@ -269,8 +247,51 @@ a {
     font-weight: bold;
 }
 
+.theme-verse-text {
+    font-family: "Great Vibes", cursive !important;
+    font-size: 2.5rem !important;
+    line-height: 1.4;
+    max-width: 800px;
+    margin: 0 auto 10px auto;
+    color: var(--color-wood);
+}
+
+.verse-reference {
+    font-family: var(--font-heading);
+    font-size: 1.3rem !important;
+    font-weight: 600;
+    margin-top: 10px;
+    color: var(--color-wood);
+}
+
+.message p {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.message p.theme-verse-text {
+    font-size: 2.5rem;
+}
+
+.message verse-reference {
+    font-size: 1.3rem;
+}
+
+
+.message h2 {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+
+
+/*latest sermon*/
 .latest-sermon-section {
-    padding: 30px 20px;
+    padding: 30px 20px 80px;
     text-align: center;
 }
 
@@ -278,13 +299,14 @@ a {
     font-family: var(--font-heading);
     font-size: 2rem;
     margin-bottom: 30px;
+    padding-top: 30px;
 }
 
 .latest-sermon-card {
     max-width: 700px;
     margin: 0 auto;
     background-color: white;
-    padding: 20px;
+    padding: 40px;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
@@ -304,13 +326,8 @@ a {
     margin-top: 5px;
 }
 
-.message p {
-    max-width: 700px;
-    margin: 0 auto;
-    font-size: 18px;
-    padding-bottom: 40px;
-}
 
+/*info grid*/
 .info-grid-container {
     display: flex;
     justify-content: center;

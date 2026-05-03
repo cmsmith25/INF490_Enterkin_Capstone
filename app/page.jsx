@@ -1,5 +1,5 @@
 import HeroSection from "../components/HeroSection";
-import ThemeVerse from "../components/Message";
+import ThemeVerse from "../components/ThemeVerse";
 import InfoGrid from "../components/InfoGrid";
 import ScriptureCarousel from "../components/ScriptureCarousel";
 import LatestSermon from "../components/LatestSermon";
