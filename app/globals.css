@@ -467,6 +467,81 @@ a {
     margin-bottom: 10px;
 }
 
+.calendar {
+    text-align: center;
+    margin: 50px auto;
+    max-width: 850px;
+    padding: 25px;
+}
+
+.calendar h2 {
+    font-family: var(--font-heading);
+    margin-bottom: 25px;
+    font-size: 2rem;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 12px;
+}
+
+.calendar-day-name {
+    font-weight: bold;
+    font-size: 1rem;
+    color: var(--color-wood);
+}
+
+.calendar-cell {
+    background-color: #f4f4f4;
+    padding: 18px;
+    border-radius: 8px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.calendar-cell.has-event {
+    background-color: var(--color-sage);
+    color: white;
+    font-weight: bold;
+}
+
+.calendar-cell:hover {
+    transform: scale(1.05);
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+
+.calendar-grid > div:empty {
+    background: transparent;
+}
+
+@media (max-width: 768px) {
+
+    .calendar {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .calendar h2 {
+        font-size: 1.5rem;
+    }
+
+    .calendar-grid {
+        gap: 6px;
+    }
+
+    .calendar-day-name {
+        font-size: 0.75rem;
+    }
+
+    .calendar-cell {
+        padding: 10px;
+        font-size: 0.85rem;
+        border-radius: 6px;
+    }
+}
+
 
 .events-section {
     margin-top: 20px;
