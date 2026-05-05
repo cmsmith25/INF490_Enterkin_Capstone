@@ -17,7 +17,7 @@ export default function Contact() {
                     </p>
 
                     <p>
-                        <strong>Phone:</strong> (620)478-2258
+                        <strong>Phone:</strong> (620) 478-2258
                     </p>
 
                     <p>
